@@ -32,7 +32,7 @@ public class GetJSON extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 
-		String urlToRead = "https://www.googleapis.com/civicinfo/v1/elections?key=AIzaSyBGtYVq_OZ35H4BY-r4IAx5cYAVTuOG7rQ";
+		String urlToRead = "https://www.googleapis.com/civicinfo/v2/voterinfo?address=370+S.+Negley+Ave+pittsburgh+pa+15232&electionId=2000&key=AIzaSyBGtYVq_OZ35H4BY-r4IAx5cYAVTuOG7rQ";
 		URL url;
 		HttpURLConnection conn;
 		BufferedReader rd;
@@ -56,7 +56,8 @@ public class GetJSON extends HttpServlet {
 		}
 
 		response.setContentType("text/plain");
-		response.getWriter().println("Hello, world" + result);
+		String s = StringEscapeUtils.escapeJava(result);
+		response.getWriter().println("Hello, world" + s);
 
 		
 		
