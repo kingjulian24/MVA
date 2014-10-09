@@ -5,7 +5,7 @@ $(document).ready(function(){
 		console.log(address);
 		$.ajax({
 			type:'GET',
-			url: 'https://www.googleapis.com/civicinfo/v2/voterinfo?address='+address+'&electionId=2000&key={key}',
+			url: 'https://www.googleapis.com/civicinfo/v2/voterinfo?address='+address+'&electionId=4100&key=AIzaSyBGtYVq_OZ35H4BY-r4IAx5cYAVTuOG7rQ',
 			dataType: 'jsonp',
 			success: function(data) { jsonParser(data)}
 		});
@@ -15,6 +15,7 @@ $(document).ready(function(){
 
 function jsonParser (data){
 
+	$('.row').empty();
 		if(data.contests.length > 0){ // validate data
 
 			var edata = data; //get all contests
@@ -30,12 +31,12 @@ function jsonParser (data){
 					var district = edata.contests[i].district;
 
 
-					$('.row').append('<h3>'+ district.name+':'+district.scope+':'+district.id+':'+'</h3>');
+					$('.row').append('<h4>'+ district.name+':'+district.scope+':'+district.id+':'+'</h4>');
 
 					var candidates = edata.contests[i].candidates;
-					for (var j = candidates.length - 1; j >= 0; j--) {
+					for (var j = 0; j <= candidates.length - 1; j++) {
 
-						$('.row').append('<h4>'+(j+1) +' : ' + candidates[j].name +'('+candidates[j].party+')</h4>');
+						$('.row').append('<h3>'+(j+1) +' : ' + candidates[j].name +'('+candidates[j].party+')</h3>');
 
 					};
 					
@@ -46,6 +47,7 @@ function jsonParser (data){
 				};
 			
 		} else { // if no data
+
 			$('.row').append('<h1>invalid input</h1>');
 		}
 
