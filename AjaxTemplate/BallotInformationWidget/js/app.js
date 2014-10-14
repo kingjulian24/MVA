@@ -32,7 +32,7 @@ function jsonParser (data){
 					var district = edata.contests[i].district;
 
 
-					$('.row').append('<h4>'+ district.name+'</h4>');
+					$('.row').append('<h4>'+ district.name+' ('+district.scope+')'+'</h4>');
 
 					var candidates = edata.contests[i].candidates;
 					for (var j = 0; j <= candidates.length - 1; j++) {
