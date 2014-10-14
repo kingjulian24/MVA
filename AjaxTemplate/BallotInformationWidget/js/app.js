@@ -40,8 +40,8 @@ function jsonParser (data){
 						var party = candidates[j].party;
 						party = party.replace("Democratic", "D");
 						party = party.replace("Republican", "R");
-						$('.row').append('<h3>'+(j+1) +' : ' + candidates[j].name +'('+party+')</h3>');
-
+						$('.row').append('<h3>'+ '&#x25A2;' +' ' + candidates[j].name +' ('+party+')</h3>');
+						//j+1
 					};
 					
 					
