@@ -23,15 +23,16 @@ function jsonParser (data){
 			
 
 				for (var i = edata.contests.length - 1; i >= 0; i--) {
+					$('.row').append('<h1></h1>');
 
 					var electionType = edata.contests[i].type;
-					$('.row').append('<h1>'+electionType+'</h1>');
+					
 					var office = edata.contests[i].office;
-					$('.row').append('<h2>'+office+'</h2>');
+					$('.row').append('<h2>'+office+' ('+electionType +')'+'</h2>');
 					var district = edata.contests[i].district;
 
 
-					$('.row').append('<h4>'+ district.name+':'+district.scope+'</h4>');
+					$('.row').append('<h4>'+ district.name+'</h4>');
 
 					var candidates = edata.contests[i].candidates;
 					for (var j = 0; j <= candidates.length - 1; j++) {
