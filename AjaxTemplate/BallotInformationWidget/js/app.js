@@ -25,9 +25,9 @@ function jsonParser (data){
 				for (var i = edata.contests.length - 1; i >= 0; i--) {
 
 					var electionType = edata.contests[i].type;
-					//$('.row').append('<h1>'+electionType+'</h1>');
+					$('.row').append('<h1>'+electionType+'</h1>');
 					var office = edata.contests[i].office;
-					$('.row').append('<h2>'+office+'('+elecitonType+')'+'</h2>');
+					$('.row').append('<h2>'+office+'</h2>');
 					var district = edata.contests[i].district;
 
 
