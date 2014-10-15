@@ -23,16 +23,16 @@ function jsonParser (data){
 			
 
 				for (var i = edata.contests.length - 1; i >= 0; i--) {
-					$('.row').append('<h1></h1>');
+					
 
 					var electionType = edata.contests[i].type;
 					
 					var office = edata.contests[i].office;
-					$('.row').append('<h2>'+office+' ('+electionType +')'+'</h2>');
+					$('.row').append('<h3>'+office+' ('+electionType +')'+'</h3>');
 					var district = edata.contests[i].district;
 
 
-					$('.row').append('<h4>'+ district.name+' ('+district.scope+')'+'</h4>');
+					$('.row').append('<h5>'+ district.name+' ('+district.scope+')'+'</h5>');
 
 					var candidates = edata.contests[i].candidates;
 					for (var j = 0; j <= candidates.length - 1; j++) {
@@ -40,12 +40,14 @@ function jsonParser (data){
 						var party = candidates[j].party;
 						party = party.replace("Democratic", "D");
 						party = party.replace("Republican", "R");
-						$('.row').append('<h3>'+ '&#x25A2;' +' ' + candidates[j].name +' ('+party+')</h3>');
-						//j+1
+						$('.row').append('<h4>'+ '&#x25A2;' +' ' + candidates[j].name +' ('+party+')</h4>');
+						
+
 					};
 					
+					$('.row').append('<h4>'+ '&#x25A2;' +' ' + '___________ ' +'(Write-in)'+'</h4>');
 					
-
+					$('.row').append('<br>');
 
 
 				};
